@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/Home">
+
+    <fragment
+        android:id="@+id/Home"
+        android:name="com.example.visahackathon.Home"
+        android:label="@string/home_label"
+        tools:layout="@layout/home">
+        <action
+            android:id="@+id/action_Home_to_Menu"
+            app:destination="@id/Menu" />
+        <action
+            android:id="@+id/action_Home_to_Map"
+            app:destination="@id/Map" />
+        <action
+            android:id="@+id/action_Home_to_CommunityLeaderboard"
+            app:destination="@id/CommunityLeaderboard" />
+        <action
+            android:id="@+id/action_Home_to_UserLeaderboard"
+            app:destination="@id/UserLeaderboard" />
+        <action
+            android:id="@+id/action_Home_to_Profile"
+            app:destination="@id/Profile" />
+        <action
+            android:id="@+id/action_Home_to_Network"
+            app:destination="@id/Network" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/Menu"
+        android:name="com.example.visahackathon.Menu"
+        android:label="@string/menu_label"
+        tools:layout="@layout/menu">
+        <action
+            android:id="@+id/action_Menu_to_Home"
+            app:destination="@id/Home" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/Map"
+        android:name="com.example.visahackathon.Map"
+        android:label="@string/map_label"
+        tools:layout="@layout/map">
+        <action
+            android:id="@+id/action_Map_to_Home"
+            app:destination="@id/Home" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/CommunityLeaderboard"
+        android:name="com.example.visahackathon.CommunityLeaderboard"
+        android:label="@string/community_label"
+        tools:layout="@layout/community">
+        <action
+            android:id="@+id/action_Community_to_Home"
+            app:destination="@id/Home" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/UserLeaderboard"
+        android:name="com.example.visahackathon.UserLeaderboard"
+        android:label="@string/user_label"
+        tools:layout="@layout/user">
+        <action
+            android:id="@+id/action_User_to_Home"
+            app:destination="@id/Home" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/Profile"
+        android:name="com.example.visahackathon.Profile"
+        android:label="@string/profile_label"
+        tools:layout="@layout/profile">
+        <action
+            android:id="@+id/action_Profile_to_Home"
+            app:destination="@id/Home" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/Network"
+        android:name="com.example.visahackathon.Network"
+        android:label="@string/network_label"
+        tools:layout="@layout/network">
+        <action
+            android:id="@+id/action_Network_to_Home"
+            app:destination="@id/Home" />
+    </fragment>
+</navigation>
