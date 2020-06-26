@@ -12,25 +12,21 @@ import androidx.navigation.fragment.findNavController
 /**
  * A simple [Fragment] subclass as the default destination in the navigation.
  */
-class Profile : Fragment() {
+class Donate : Fragment() {
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.profile, container, false)
+        return inflater.inflate(R.layout.donate, container, false)
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        view.findViewById<ImageButton>(R.id.profile_to_home).setOnClickListener {
-            findNavController().navigate(R.id.action_Profile_to_Home)
-        }
-
-        view.findViewById<Button>(R.id.profile_to_donate).setOnClickListener {
-            findNavController().navigate(R.id.action_Profile_to_Donate)
+        view.findViewById<ImageButton>(R.id.donate_to_profile).setOnClickListener {
+            findNavController().navigate(R.id.action_Donate_to_Profile)
         }
     }
 }
