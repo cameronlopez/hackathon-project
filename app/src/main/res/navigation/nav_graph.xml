@@ -78,6 +78,9 @@
         <action
             android:id="@+id/action_Profile_to_Home"
             app:destination="@id/Home" />
+        <action
+            android:id="@+id/action_Profile_to_Donate"
+            app:destination="@id/Donate" />
     </fragment>
 
     <fragment
@@ -88,5 +91,15 @@
         <action
             android:id="@+id/action_Network_to_Home"
             app:destination="@id/Home" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/Donate"
+        android:name="com.example.visahackathon.Donate"
+        android:label="@string/donate_label"
+        tools:layout="@layout/donate">
+        <action
+            android:id="@+id/action_Donate_to_Profile"
+            app:destination="@id/Profile" />
     </fragment>
 </navigation>
