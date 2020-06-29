@@ -50,6 +50,7 @@ class Home : Fragment() {
 
         val userEmail : String = fAuth.currentUser?.email.toString();
 
+        //access user
         fDatabase.reference.child("/users").addListenerForSingleValueEvent(object: ValueEventListener {
             override fun onDataChange(snapshot: DataSnapshot) {
                 snapshot.children.forEach{

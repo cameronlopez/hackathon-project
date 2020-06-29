@@ -8,6 +8,7 @@ import android.view.ViewGroup
 import android.widget.Button
 import android.widget.ImageButton
 import androidx.navigation.fragment.findNavController
+import kotlinx.android.synthetic.main.profile.*
 
 /**
  * A simple [Fragment] subclass as the default destination in the navigation.
@@ -24,6 +25,8 @@ class Profile : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+
+        profile_text_view.text = globalUser.fullName
 
         view.findViewById<ImageButton>(R.id.profile_to_home).setOnClickListener {
             findNavController().navigate(R.id.action_Profile_to_Home)
