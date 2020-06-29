@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "329925682060",
+    "firebase_url": "https://visahackathon-6e0e3.firebaseio.com",
+    "project_id": "visahackathon-6e0e3",
+    "storage_bucket": "visahackathon-6e0e3.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:329925682060:android:0addf1d2878cfff4ac2ca9",
+        "android_client_info": {
+          "package_name": "com.example.visahackathon"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "329925682060-74mfvtmmtp8fuofjaqnb1776us1a63gj.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.visahackathon",
+            "certificate_hash": "c2e57851115515795b2c4240adc46e9f418354bf"
+          }
+        },
+        {
+          "client_id": "329925682060-2dbm4b4nb83blqlh8dtmmgq3q9e7u5q4.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAh8AwC_H3icg56FWo4BlyGdeX2HPFKgLc"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "329925682060-2dbm4b4nb83blqlh8dtmmgq3q9e7u5q4.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
