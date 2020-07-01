@@ -65,6 +65,11 @@ class Login : AppCompatActivity() {
                 finish()
             }.addOnFailureListener{
                 Log.d("Main", "Failed to login user: ${it.message}")
+
+                if(it.message.toString().contains("email"))
+                    mEmail.error = it.message.toString()
+                else
+                    mPassword.error = it.message.toString()
             }
         }
 

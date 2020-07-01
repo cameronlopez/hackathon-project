@@ -19,14 +19,11 @@ import com.google.firebase.database.FirebaseDatabase.getInstance
 import com.google.firebase.storage.FirebaseStorage
 import com.google.firebase.storage.StorageReference
 import kotlinx.android.synthetic.main.home.*
+import java.util.*
 
 class Register : AppCompatActivity() {
 
     lateinit var mFullName : EditText
-    lateinit var mCardNum : EditText
-    lateinit var mExpDate : EditText
-    lateinit var mCVV : EditText
-    lateinit var mZipCode : EditText
     lateinit var mEmail : EditText
     lateinit var mPassword : EditText
     lateinit var mRegisterBtn : Button
@@ -39,10 +36,6 @@ class Register : AppCompatActivity() {
         setContentView(R.layout.register)
 
         mFullName = findViewById(R.id.full_name)
-        mCardNum = findViewById(R.id.card_number)
-        mExpDate = findViewById(R.id.exp_date)
-        mCVV = findViewById(R.id.cvv)
-        mZipCode = findViewById(R.id.zip_code)
         mEmail = findViewById(R.id.email)
         mPassword = findViewById(R.id.password)
         mRegisterBtn = findViewById(R.id.register_button)
@@ -60,8 +53,14 @@ class Register : AppCompatActivity() {
         mRegisterBtn.setOnClickListener {
 
             // validate user
+            val fullName : String = mFullName.text.toString().trim()
             val email : String = mEmail.text.toString().trim()
             val password : String = mPassword.text.toString().trim()
+
+            if (TextUtils.isEmpty(fullName)) {
+                mFullName.error = "Full Name is Required."
+                return@setOnClickListener
+            }
 
             if (TextUtils.isEmpty(email)) {
                 mEmail.error = "Email is Required."
@@ -77,21 +76,22 @@ class Register : AppCompatActivity() {
             fAuth.createUserWithEmailAndPassword(email,password).addOnCompleteListener {
                 if (!it.isSuccessful) return@addOnCompleteListener
 
-                val fullName : String = mFullName.text.toString().trim()
-                val cardNum : String = mCardNum.text.toString().trim()
-                val expDate : String = mExpDate.text.toString().trim()
-                val cVV : String = mCVV.text.toString().trim()
-                val zipCode : String = mZipCode.text.toString().trim()
+                val uuid = UUID.randomUUID().toString()
 
-                val user = User(email, password, fullName, cardNum, expDate, cVV, zipCode)
+                val user = User(uuid, email, password, fullName, "")
 
-                fDatabase.reference.child("/users/$cardNum").setValue(user)
+                fDatabase.reference.child("/users/$uuid").setValue(user)
 
                 val intent = Intent(this, MainActivity::class.java)
                 startActivity(intent)
                 finish()
             }.addOnFailureListener{
                 Log.d("Main", "Failed to create user: ${it.message}")
+
+                if(it.message.toString().contains("email"))
+                    mEmail.error = it.message.toString()
+                else
+                    mPassword.error = it.message.toString()
             }
         }
 
