@@ -91,6 +91,26 @@ class Home : Fragment() {
             }
         })
 
+        progressBar.progress = 0
+        donation_amount.text = "$${progressBar.progress} Donated"
+
+        fDatabase.reference.child("/Donate").addListenerForSingleValueEvent(object: ValueEventListener {
+            override fun onDataChange(snapshot: DataSnapshot) {
+                snapshot.children.forEach {
+                    if (it.toString().contains("Email=$userEmail")) {
+                        val donation = it.getValue(Donation::class.java) as Donation
+
+                        progressBar.progress += donation.Amount
+                        donation_amount.text = "$${progressBar.progress} Donated"
+                    }
+                }
+            }
+
+            override fun onCancelled(error: DatabaseError) {
+
+            }
+        })
+
         view.findViewById<ImageView>(R.id.select_photo_button).setOnClickListener{
 
             val intent = Intent(Intent.ACTION_PICK)
@@ -157,3 +177,5 @@ class Home : Fragment() {
         }
     }
 }
+
+class Donation(val Amount: Int = 0, val Email: String = "", val Place: String = "")
