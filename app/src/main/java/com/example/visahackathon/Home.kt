@@ -37,7 +37,11 @@ import java.util.*
 var globalUser : User = User("",
     "",
     "",
-    "")
+    "",
+    0,
+    "",
+    0,
+    0)
 
 /**
  * A simple [Fragment] subclass as the default destination in the navigation.
@@ -65,48 +69,35 @@ class Home : Fragment() {
         val userEmail : String = fAuth.currentUser?.email.toString();
 
         //access user
-        fDatabase.reference.child("/users").addListenerForSingleValueEvent(object: ValueEventListener {
-            override fun onDataChange(snapshot: DataSnapshot) {
-                snapshot.children.forEach{
-                    if (it.toString().contains("email=$userEmail")) {
-                        val user = it.getValue(User::class.java) as User
+        fDatabase.reference.child("/Users")
+            .addListenerForSingleValueEvent(object : ValueEventListener {
+                override fun onDataChange(snapshot: DataSnapshot) {
+                    snapshot.children.forEach {
+                        if (it.toString().contains("email=$userEmail")) {
+                            val user = it.getValue(User::class.java) as User
 
-                        if (user != null) {
-                            globalUser = user
-                        }
 
-                        full_name_text_view.text = globalUser.fullName
+                            if (user != null) {
+                                globalUser = user
+                                Log.d("User", "${globalUser.donateGoal}")
+                            }
 
-                        if (globalUser.profileImageUrl != "") {
-                            Picasso.get().load(globalUser.profileImageUrl).into(select_photo_button)
-                            select_photo_text.visibility = View.INVISIBLE
-                            select_photo_button.background = null
+                            full_name_text_view.text = globalUser.name
+                            progressBar.max = globalUser.donateGoal
+                            progressBar.progress = globalUser.amountDonated
+                            donation_amount.text = "$${globalUser.amountDonated} Donated"
+
+                            if (globalUser.profileImageUrl != "") {
+                                Picasso.get().load(globalUser.profileImageUrl)
+                                    .into(select_photo_button)
+                                select_photo_text.visibility = View.INVISIBLE
+                                select_photo_button.background = null
+                            }
                         }
                     }
                 }
-            }
 
-            override fun onCancelled(error: DatabaseError) {
-
-            }
-        })
-
-        progressBar.progress = 0
-        donation_amount.text = "$${progressBar.progress} Donated"
-
-        fDatabase.reference.child("/Donate").addListenerForSingleValueEvent(object: ValueEventListener {
-            override fun onDataChange(snapshot: DataSnapshot) {
-                snapshot.children.forEach {
-                    if (it.toString().contains("Email=$userEmail")) {
-                        val donation = it.getValue(Donation::class.java) as Donation
-
-                        progressBar.progress += donation.Amount
-                        donation_amount.text = "$${progressBar.progress} Donated"
-                    }
-                }
-            }
-
-            override fun onCancelled(error: DatabaseError) {
+                override fun onCancelled(error: DatabaseError) {
 
             }
         })
@@ -168,8 +159,8 @@ class Home : Fragment() {
                 fStorage.reference.child("/images/$fileID").downloadUrl.addOnSuccessListener {
                     Log.d("Image", it.toString())
 
-                    val user = User(globalUser.uuid, globalUser.email, globalUser.password, globalUser.fullName, it.toString())
-                    fDatabase.reference.child("/users/${globalUser.uuid}").setValue(user)
+                    val user = User(globalUser.uuid, globalUser.email, globalUser.password, globalUser.name, globalUser.zipCode, it.toString(), globalUser.amountDonated, globalUser.donateGoal)
+                    fDatabase.reference.child("/Users/${globalUser.uuid}").setValue(user)
                 }
             }
 

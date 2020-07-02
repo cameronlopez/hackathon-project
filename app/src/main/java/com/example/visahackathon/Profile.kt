@@ -26,7 +26,7 @@ class Profile : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        profile_text_view.text = globalUser.fullName
+        profile_text_view.text = globalUser.name
 
         view.findViewById<ImageButton>(R.id.profile_to_home).setOnClickListener {
             findNavController().navigate(R.id.action_Profile_to_Home)

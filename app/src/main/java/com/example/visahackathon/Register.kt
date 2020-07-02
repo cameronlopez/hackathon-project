@@ -24,6 +24,7 @@ import java.util.*
 class Register : AppCompatActivity() {
 
     lateinit var mFullName : EditText
+    lateinit var mZipCode : EditText
     lateinit var mEmail : EditText
     lateinit var mPassword : EditText
     lateinit var mRegisterBtn : Button
@@ -36,6 +37,7 @@ class Register : AppCompatActivity() {
         setContentView(R.layout.register)
 
         mFullName = findViewById(R.id.full_name)
+        mZipCode = findViewById(R.id.zip_code)
         mEmail = findViewById(R.id.email)
         mPassword = findViewById(R.id.password)
         mRegisterBtn = findViewById(R.id.register_button)
@@ -54,11 +56,17 @@ class Register : AppCompatActivity() {
 
             // validate user
             val fullName : String = mFullName.text.toString().trim()
+            val zipCode : String = mZipCode.text.toString().trim()
             val email : String = mEmail.text.toString().trim()
             val password : String = mPassword.text.toString().trim()
 
             if (TextUtils.isEmpty(fullName)) {
                 mFullName.error = "Full Name is Required."
+                return@setOnClickListener
+            }
+
+            if (!TextUtils.isDigitsOnly(zipCode)) {
+                mZipCode.error = "Zip Code is Required as Numbers Only."
                 return@setOnClickListener
             }
 
@@ -78,9 +86,10 @@ class Register : AppCompatActivity() {
 
                 val uuid = UUID.randomUUID().toString()
 
-                val user = User(uuid, email, password, fullName, "")
+                val zipCodeInt = zipCode.toInt()
+                val user = User(uuid, email, password, fullName, zipCodeInt,"", 0, 100)
 
-                fDatabase.reference.child("/users/$uuid").setValue(user)
+                fDatabase.reference.child("/Users/$uuid").setValue(user)
 
                 val intent = Intent(this, MainActivity::class.java)
                 startActivity(intent)
