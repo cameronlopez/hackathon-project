@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<root>
+  <item name="com.visa.checkout.widget.VisaCheckoutButton VisaCheckoutButton(android.content.Context, java.lang.String) 1">
+    <annotation name="androidx.annotation.StringDef">
+      <val name="value" val="{com.visa.checkout.ButtonParams.ButtonColor.STANDARD, com.visa.checkout.ButtonParams.ButtonColor.NEUTRAL}" />
+    </annotation>
+  </item>
+</root>
+

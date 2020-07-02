@@ -165,16 +165,3 @@
         </LinearLayout>
     </RelativeLayout>
 </RelativeLayout>
-
-    <TextView
-        android:id="@+id/prevDonations"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="48dp"
-        android:text="Populate"
-        android:textColor="#090909"
-        android:textColorHint="#090909"
-        app:layout_constraintTop_toBottomOf="@+id/profile_text_view"
-        tools:layout_editor_absoluteX="156dp" />
-
-</androidx.constraintlayout.widget.ConstraintLayout>
