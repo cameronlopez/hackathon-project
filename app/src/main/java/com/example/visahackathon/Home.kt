@@ -77,7 +77,8 @@ class Home : Fragment() {
         }
 
         view.findViewById<Button>(R.id.home_to_map).setOnClickListener {
-            findNavController().navigate(R.id.action_Home_to_Map)
+            val intent = Intent(activity, Map::class.java)
+            startActivity(intent)
         }
 
         view.findViewById<Button>(R.id.home_to_community).setOnClickListener {

@@ -13,9 +13,7 @@
         <action
             android:id="@+id/action_Home_to_Menu"
             app:destination="@id/Menu" />
-        <action
-            android:id="@+id/action_Home_to_Map"
-            app:destination="@id/Map" />
+
         <action
             android:id="@+id/action_Home_to_CommunityLeaderboard"
             app:destination="@id/CommunityLeaderboard" />
@@ -40,15 +38,6 @@
             app:destination="@id/Home" />
     </fragment>
 
-    <fragment
-        android:id="@+id/Map"
-        android:name="com.example.visahackathon.Map"
-        android:label="@string/map_label"
-        tools:layout="@layout/map">
-        <action
-            android:id="@+id/action_Map_to_Home"
-            app:destination="@id/Home" />
-    </fragment>
 
     <fragment
         android:id="@+id/CommunityLeaderboard"
