@@ -1,8 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    xmlns:app="http://schemas.android.com/apk/res-auto">
+    android:layout_height="match_parent">
 
     <View
         android:id="@+id/view3"
@@ -26,13 +27,133 @@
         android:id="@+id/profile_text_view"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="132dp"
-        android:layout_marginLeft="132dp"
-        android:layout_marginTop="16dp"
+        android:layout_marginTop="8dp"
         android:text="@string/donate_label"
         android:textColor="@android:color/white"
         android:textSize="24sp"
-        app:layout_constraintStart_toEndOf="@+id/donate_to_profile"
+        app:layout_constraintEnd_toEndOf="@+id/view3"
+        app:layout_constraintHorizontal_bias="0.513"
+        app:layout_constraintStart_toStartOf="@+id/view3"
         app:layout_constraintTop_toTopOf="parent" />
+
+    <EditText
+        android:id="@+id/donationAmount"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="28dp"
+        android:ems="10"
+        android:gravity="center"
+        android:hint="Ex. 50"
+        android:inputType="numberDecimal"
+        android:textColor="#100F0F"
+        android:textSize="24sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.503"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView" />
+
+    <TextView
+        android:id="@+id/textView5"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="32dp"
+        android:text="Comment"
+        android:textColor="#101010"
+        android:textSize="24sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.506"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/donationAmount" />
+
+    <Button
+        android:id="@+id/donate_to_checkout"
+        android:layout_width="325dp"
+        android:layout_height="63dp"
+        android:layout_marginTop="28dp"
+        android:text="Donate"
+        android:textSize="24sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.488"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/donationComment"
+        app:layout_constraintVertical_bias="0.269" />
+
+    <EditText
+        android:id="@+id/donationComment"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="28dp"
+        android:ems="10"
+        android:gravity="center"
+        android:hint='Ex. "Great Work"'
+        android:digits="abcdefghijklmnopqrstuvwxyz1234567890 "
+        android:inputType="textPersonName"
+        android:textColor="#0B0A0A"
+        android:textSize="24sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.503"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView5" />
+
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="236dp"
+        android:text="Amount"
+        android:textColor="#0E0D0D"
+        android:textSize="24sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/view3" />
+
+    <TextView
+        android:id="@+id/textView7"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="28dp"
+        android:text="Select a merchant from the list"
+        android:textColor="#090909"
+        android:textSize="24sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/view3" />
+
+    <RadioGroup
+        android:id="@+id/merchantGroup"
+        android:layout_width="108dp"
+        android:layout_height="111dp"
+        android:layout_marginTop="100dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.501"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/profile_text_view">
+
+        <RadioButton
+            android:id="@+id/merchant1"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Test1"
+            android:textSize="24sp" />
+
+        <RadioButton
+            android:id="@+id/merchant2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Test2"
+            android:textSize="24sp" />
+
+        <RadioButton
+            android:id="@+id/merchant3"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Test3"
+            android:textSize="24sp" />
+    </RadioGroup>
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>

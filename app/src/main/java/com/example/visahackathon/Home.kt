@@ -40,8 +40,10 @@ var globalUser : User = User("",
     "",
     0,
     "",
-    0,
-    0)
+    0.0,
+    0.0)
+
+var globalDonation : Donation = Donation(null, null, null)
 
 /**
  * A simple [Fragment] subclass as the default destination in the navigation.
@@ -83,8 +85,8 @@ class Home : Fragment() {
                             }
 
                             full_name_text_view.text = globalUser.name
-                            progressBar.max = globalUser.donateGoal
-                            progressBar.progress = globalUser.amountDonated
+                            progressBar.max = globalUser.donateGoal.toInt()
+                            progressBar.progress = globalUser.amountDonated.toInt()
                             donation_amount.text = "$${globalUser.amountDonated} Donated"
 
                             if (globalUser.profileImageUrl != "") {
@@ -96,11 +98,13 @@ class Home : Fragment() {
                         }
                     }
                 }
-
                 override fun onCancelled(error: DatabaseError) {
 
             }
         })
+//        progressBar.progress = 0
+//        donation_amount.text = "$${progressBar.progress} Donated"
+//        progressBar.progress += globalUser.amountDonated
 
         view.findViewById<ImageView>(R.id.select_photo_button).setOnClickListener{
 
@@ -169,4 +173,4 @@ class Home : Fragment() {
     }
 }
 
-class Donation(val Amount: Int = 0, val Email: String = "", val Place: String = "")
+//class Donation(val Amount: Int = 0, val Email: String = "", val Place: String = "")
