@@ -6,5 +6,5 @@ class User(val uuid: String = "",
            val name: String = "",
            val zipCode: Int = 0,
            val profileImageUrl: String = "",
-           val amountDonated: Int = 0,
-           val donateGoal: Int = 0)
+           var amountDonated: Double = 0.0,
+           val donateGoal: Double = 0.0)

@@ -87,13 +87,14 @@ class Register : AppCompatActivity() {
                 val uuid = UUID.randomUUID().toString()
 
                 val zipCodeInt = zipCode.toInt()
-                val user = User(uuid, email, password, fullName, zipCodeInt,"", 0, 100)
+                val user = User(uuid, email, password, fullName, zipCodeInt,"", 0.0, 100.0)
 
                 fDatabase.reference.child("/Users/$uuid").setValue(user)
 
                 val intent = Intent(this, MainActivity::class.java)
                 startActivity(intent)
                 finish()
+
             }.addOnFailureListener{
                 Log.d("Main", "Failed to create user: ${it.message}")
 
