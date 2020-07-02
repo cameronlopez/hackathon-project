@@ -1,0 +1,154 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<root>
+  <item name="com.visa.checkout.ButtonColor">
+    <annotation name="androidx.annotation.StringDef">
+      <val name="value" val="{com.visa.checkout.ButtonParams.ButtonColor.STANDARD, com.visa.checkout.ButtonParams.ButtonColor.NEUTRAL}" />
+    </annotation>
+  </item>
+  <item name="com.visa.checkout.ButtonParams.ButtonColor">
+    <annotation name="androidx.annotation.StringDef">
+      <val name="value" val="{com.visa.checkout.ButtonParams.ButtonColor.STANDARD, com.visa.checkout.ButtonParams.ButtonColor.NEUTRAL}" />
+    </annotation>
+  </item>
+  <item name="com.visa.checkout.ButtonSource java.lang.String getUrl(android.content.Context, java.lang.String, java.lang.String) 2">
+    <annotation name="androidx.annotation.StringDef">
+      <val name="value" val="{com.visa.checkout.ButtonParams.ButtonColor.STANDARD, com.visa.checkout.ButtonParams.ButtonColor.NEUTRAL}" />
+    </annotation>
+  </item>
+  <item name="com.visa.checkout.CheckoutButton CheckoutButton(android.content.Context, java.lang.String) 1">
+    <annotation name="androidx.annotation.StringDef">
+      <val name="value" val="{com.visa.checkout.ButtonParams.ButtonColor.STANDARD, com.visa.checkout.ButtonParams.ButtonColor.NEUTRAL}" />
+    </annotation>
+  </item>
+  <item name="com.visa.checkout.CheckoutButton buttonColor">
+    <annotation name="androidx.annotation.StringDef">
+      <val name="value" val="{com.visa.checkout.ButtonParams.ButtonColor.STANDARD, com.visa.checkout.ButtonParams.ButtonColor.NEUTRAL}" />
+    </annotation>
+  </item>
+  <item name="com.visa.checkout.CheckoutButton void setColorStyle(java.lang.String) 0">
+    <annotation name="androidx.annotation.StringDef">
+      <val name="value" val="{com.visa.checkout.ButtonParams.ButtonColor.STANDARD, com.visa.checkout.ButtonParams.ButtonColor.NEUTRAL}" />
+    </annotation>
+  </item>
+  <item name="com.visa.checkout.Environment">
+    <annotation name="androidx.annotation.StringDef">
+      <val name="value" val="{com.visa.checkout.Environment.SANDBOX, com.visa.checkout.Environment.PRODUCTION}" />
+    </annotation>
+  </item>
+  <item name="com.visa.checkout.Profile java.lang.String getDataLevel()">
+    <annotation name="androidx.annotation.StringDef">
+      <val name="value" val="{com.visa.checkout.Profile.DataLevel.SUMMARY, com.visa.checkout.Profile.DataLevel.FULL, com.visa.checkout.Profile.DataLevel.NONE}" />
+    </annotation>
+  </item>
+  <item name="com.visa.checkout.Profile java.lang.String getEnvironment()">
+    <annotation name="androidx.annotation.StringDef">
+      <val name="value" val="{com.visa.checkout.Environment.SANDBOX, com.visa.checkout.Environment.PRODUCTION}" />
+    </annotation>
+  </item>
+  <item name="com.visa.checkout.Profile java.lang.String[] getAcceptedBillingCountries()">
+    <annotation name="androidx.annotation.StringDef">
+      <val name="value" val="{com.visa.checkout.Profile.Country.US, com.visa.checkout.Profile.Country.CA, com.visa.checkout.Profile.Country.AU, com.visa.checkout.Profile.Country.CN, com.visa.checkout.Profile.Country.AR, com.visa.checkout.Profile.Country.CL, com.visa.checkout.Profile.Country.MX, com.visa.checkout.Profile.Country.PE, com.visa.checkout.Profile.Country.ZA, com.visa.checkout.Profile.Country.NZ, com.visa.checkout.Profile.Country.SG, com.visa.checkout.Profile.Country.MY, com.visa.checkout.Profile.Country.HK, com.visa.checkout.Profile.Country.CO, com.visa.checkout.Profile.Country.AE, com.visa.checkout.Profile.Country.BR, com.visa.checkout.Profile.Country.FR, com.visa.checkout.Profile.Country.IN, com.visa.checkout.Profile.Country.PL, com.visa.checkout.Profile.Country.IE, com.visa.checkout.Profile.Country.ES, com.visa.checkout.Profile.Country.GB, com.visa.checkout.Profile.Country.KW, com.visa.checkout.Profile.Country.QA, com.visa.checkout.Profile.Country.SA, com.visa.checkout.Profile.Country.UA}" />
+    </annotation>
+  </item>
+  <item name="com.visa.checkout.Profile java.lang.String[] getAcceptedCardBrands()">
+    <annotation name="androidx.annotation.StringDef">
+      <val name="value" val="{com.visa.checkout.Profile.CardBrand.VISA, com.visa.checkout.Profile.CardBrand.AMEX, com.visa.checkout.Profile.CardBrand.MASTERCARD, com.visa.checkout.Profile.CardBrand.DISCOVER, com.visa.checkout.Profile.CardBrand.ELO, com.visa.checkout.Profile.CardBrand.ELECTRON}" />
+    </annotation>
+  </item>
+  <item name="com.visa.checkout.Profile java.lang.String[] getAcceptedShippingCountries()">
+    <annotation name="androidx.annotation.StringDef">
+      <val name="value" val="{com.visa.checkout.Profile.Country.US, com.visa.checkout.Profile.Country.CA, com.visa.checkout.Profile.Country.AU, com.visa.checkout.Profile.Country.CN, com.visa.checkout.Profile.Country.AR, com.visa.checkout.Profile.Country.CL, com.visa.checkout.Profile.Country.MX, com.visa.checkout.Profile.Country.PE, com.visa.checkout.Profile.Country.ZA, com.visa.checkout.Profile.Country.NZ, com.visa.checkout.Profile.Country.SG, com.visa.checkout.Profile.Country.MY, com.visa.checkout.Profile.Country.HK, com.visa.checkout.Profile.Country.CO, com.visa.checkout.Profile.Country.AE, com.visa.checkout.Profile.Country.BR, com.visa.checkout.Profile.Country.FR, com.visa.checkout.Profile.Country.IN, com.visa.checkout.Profile.Country.PL, com.visa.checkout.Profile.Country.IE, com.visa.checkout.Profile.Country.ES, com.visa.checkout.Profile.Country.GB, com.visa.checkout.Profile.Country.KW, com.visa.checkout.Profile.Country.QA, com.visa.checkout.Profile.Country.SA, com.visa.checkout.Profile.Country.UA}" />
+    </annotation>
+  </item>
+  <item name="com.visa.checkout.Profile.CardBrand">
+    <annotation name="androidx.annotation.StringDef">
+      <val name="value" val="{com.visa.checkout.Profile.CardBrand.VISA, com.visa.checkout.Profile.CardBrand.AMEX, com.visa.checkout.Profile.CardBrand.MASTERCARD, com.visa.checkout.Profile.CardBrand.DISCOVER, com.visa.checkout.Profile.CardBrand.ELO, com.visa.checkout.Profile.CardBrand.ELECTRON}" />
+    </annotation>
+  </item>
+  <item name="com.visa.checkout.Profile.Country">
+    <annotation name="androidx.annotation.StringDef">
+      <val name="value" val="{com.visa.checkout.Profile.Country.US, com.visa.checkout.Profile.Country.CA, com.visa.checkout.Profile.Country.AU, com.visa.checkout.Profile.Country.CN, com.visa.checkout.Profile.Country.AR, com.visa.checkout.Profile.Country.CL, com.visa.checkout.Profile.Country.MX, com.visa.checkout.Profile.Country.PE, com.visa.checkout.Profile.Country.ZA, com.visa.checkout.Profile.Country.NZ, com.visa.checkout.Profile.Country.SG, com.visa.checkout.Profile.Country.MY, com.visa.checkout.Profile.Country.HK, com.visa.checkout.Profile.Country.CO, com.visa.checkout.Profile.Country.AE, com.visa.checkout.Profile.Country.BR, com.visa.checkout.Profile.Country.FR, com.visa.checkout.Profile.Country.IN, com.visa.checkout.Profile.Country.PL, com.visa.checkout.Profile.Country.IE, com.visa.checkout.Profile.Country.ES, com.visa.checkout.Profile.Country.GB, com.visa.checkout.Profile.Country.KW, com.visa.checkout.Profile.Country.QA, com.visa.checkout.Profile.Country.SA, com.visa.checkout.Profile.Country.UA}" />
+    </annotation>
+  </item>
+  <item name="com.visa.checkout.Profile.DataLevel">
+    <annotation name="androidx.annotation.StringDef">
+      <val name="value" val="{com.visa.checkout.Profile.DataLevel.SUMMARY, com.visa.checkout.Profile.DataLevel.FULL, com.visa.checkout.Profile.DataLevel.NONE}" />
+    </annotation>
+  </item>
+  <item name="com.visa.checkout.Profile.ProfileBuilder ProfileBuilder(java.lang.String, java.lang.String) 1">
+    <annotation name="androidx.annotation.StringDef">
+      <val name="value" val="{com.visa.checkout.Environment.SANDBOX, com.visa.checkout.Environment.PRODUCTION}" />
+    </annotation>
+  </item>
+  <item name="com.visa.checkout.Profile.ProfileBuilder com.visa.checkout.Profile.ProfileBuilder setBillingCountries(java.lang.String[]) 0">
+    <annotation name="androidx.annotation.StringDef">
+      <val name="value" val="{com.visa.checkout.Profile.Country.US, com.visa.checkout.Profile.Country.CA, com.visa.checkout.Profile.Country.AU, com.visa.checkout.Profile.Country.CN, com.visa.checkout.Profile.Country.AR, com.visa.checkout.Profile.Country.CL, com.visa.checkout.Profile.Country.MX, com.visa.checkout.Profile.Country.PE, com.visa.checkout.Profile.Country.ZA, com.visa.checkout.Profile.Country.NZ, com.visa.checkout.Profile.Country.SG, com.visa.checkout.Profile.Country.MY, com.visa.checkout.Profile.Country.HK, com.visa.checkout.Profile.Country.CO, com.visa.checkout.Profile.Country.AE, com.visa.checkout.Profile.Country.BR, com.visa.checkout.Profile.Country.FR, com.visa.checkout.Profile.Country.IN, com.visa.checkout.Profile.Country.PL, com.visa.checkout.Profile.Country.IE, com.visa.checkout.Profile.Country.ES, com.visa.checkout.Profile.Country.GB, com.visa.checkout.Profile.Country.KW, com.visa.checkout.Profile.Country.QA, com.visa.checkout.Profile.Country.SA, com.visa.checkout.Profile.Country.UA}" />
+    </annotation>
+  </item>
+  <item name="com.visa.checkout.Profile.ProfileBuilder com.visa.checkout.Profile.ProfileBuilder setCardBrands(java.lang.String[]) 0">
+    <annotation name="androidx.annotation.StringDef">
+      <val name="value" val="{com.visa.checkout.Profile.CardBrand.VISA, com.visa.checkout.Profile.CardBrand.AMEX, com.visa.checkout.Profile.CardBrand.MASTERCARD, com.visa.checkout.Profile.CardBrand.DISCOVER, com.visa.checkout.Profile.CardBrand.ELO, com.visa.checkout.Profile.CardBrand.ELECTRON}" />
+    </annotation>
+  </item>
+  <item name="com.visa.checkout.Profile.ProfileBuilder com.visa.checkout.Profile.ProfileBuilder setDataLevel(java.lang.String) 0">
+    <annotation name="androidx.annotation.StringDef">
+      <val name="value" val="{com.visa.checkout.Profile.DataLevel.SUMMARY, com.visa.checkout.Profile.DataLevel.FULL, com.visa.checkout.Profile.DataLevel.NONE}" />
+    </annotation>
+  </item>
+  <item name="com.visa.checkout.Profile.ProfileBuilder com.visa.checkout.Profile.ProfileBuilder setShippingCountries(java.lang.String[]) 0">
+    <annotation name="androidx.annotation.StringDef">
+      <val name="value" val="{com.visa.checkout.Profile.Country.US, com.visa.checkout.Profile.Country.CA, com.visa.checkout.Profile.Country.AU, com.visa.checkout.Profile.Country.CN, com.visa.checkout.Profile.Country.AR, com.visa.checkout.Profile.Country.CL, com.visa.checkout.Profile.Country.MX, com.visa.checkout.Profile.Country.PE, com.visa.checkout.Profile.Country.ZA, com.visa.checkout.Profile.Country.NZ, com.visa.checkout.Profile.Country.SG, com.visa.checkout.Profile.Country.MY, com.visa.checkout.Profile.Country.HK, com.visa.checkout.Profile.Country.CO, com.visa.checkout.Profile.Country.AE, com.visa.checkout.Profile.Country.BR, com.visa.checkout.Profile.Country.FR, com.visa.checkout.Profile.Country.IN, com.visa.checkout.Profile.Country.PL, com.visa.checkout.Profile.Country.IE, com.visa.checkout.Profile.Country.ES, com.visa.checkout.Profile.Country.GB, com.visa.checkout.Profile.Country.KW, com.visa.checkout.Profile.Country.QA, com.visa.checkout.Profile.Country.SA, com.visa.checkout.Profile.Country.UA}" />
+    </annotation>
+  </item>
+  <item name="com.visa.checkout.PurchaseInfo java.lang.String getCurrency()">
+    <annotation name="androidx.annotation.StringDef">
+      <val name="value" val="{com.visa.checkout.PurchaseInfo.Currency.USD, com.visa.checkout.PurchaseInfo.Currency.AUD, com.visa.checkout.PurchaseInfo.Currency.BRL, com.visa.checkout.PurchaseInfo.Currency.CAD, com.visa.checkout.PurchaseInfo.Currency.CNY, com.visa.checkout.PurchaseInfo.Currency.CLP, com.visa.checkout.PurchaseInfo.Currency.COP, com.visa.checkout.PurchaseInfo.Currency.HKD, com.visa.checkout.PurchaseInfo.Currency.MYR, com.visa.checkout.PurchaseInfo.Currency.MXN, com.visa.checkout.PurchaseInfo.Currency.NZD, com.visa.checkout.PurchaseInfo.Currency.PEN, com.visa.checkout.PurchaseInfo.Currency.SGD, com.visa.checkout.PurchaseInfo.Currency.ZAR, com.visa.checkout.PurchaseInfo.Currency.AED, com.visa.checkout.PurchaseInfo.Currency.ARS, com.visa.checkout.PurchaseInfo.Currency.GBP, com.visa.checkout.PurchaseInfo.Currency.EUR, com.visa.checkout.PurchaseInfo.Currency.PLN, com.visa.checkout.PurchaseInfo.Currency.INR, com.visa.checkout.PurchaseInfo.Currency.UAH, com.visa.checkout.PurchaseInfo.Currency.SAR, com.visa.checkout.PurchaseInfo.Currency.KWD, com.visa.checkout.PurchaseInfo.Currency.QAR}" />
+    </annotation>
+  </item>
+  <item name="com.visa.checkout.PurchaseInfo java.lang.String getUserReviewAction()">
+    <annotation name="androidx.annotation.StringDef">
+      <val name="value" val="{com.visa.checkout.PurchaseInfo.UserReviewAction.PAY, com.visa.checkout.PurchaseInfo.UserReviewAction.CONTINUE, com.visa.checkout.PurchaseInfo.UserReviewAction.ADD_CARD_TO_MERCHANT}" />
+    </annotation>
+  </item>
+  <item name="com.visa.checkout.PurchaseInfo.Currency">
+    <annotation name="androidx.annotation.StringDef">
+      <val name="value" val="{com.visa.checkout.PurchaseInfo.Currency.USD, com.visa.checkout.PurchaseInfo.Currency.AUD, com.visa.checkout.PurchaseInfo.Currency.BRL, com.visa.checkout.PurchaseInfo.Currency.CAD, com.visa.checkout.PurchaseInfo.Currency.CNY, com.visa.checkout.PurchaseInfo.Currency.CLP, com.visa.checkout.PurchaseInfo.Currency.COP, com.visa.checkout.PurchaseInfo.Currency.HKD, com.visa.checkout.PurchaseInfo.Currency.MYR, com.visa.checkout.PurchaseInfo.Currency.MXN, com.visa.checkout.PurchaseInfo.Currency.NZD, com.visa.checkout.PurchaseInfo.Currency.PEN, com.visa.checkout.PurchaseInfo.Currency.SGD, com.visa.checkout.PurchaseInfo.Currency.ZAR, com.visa.checkout.PurchaseInfo.Currency.AED, com.visa.checkout.PurchaseInfo.Currency.ARS, com.visa.checkout.PurchaseInfo.Currency.GBP, com.visa.checkout.PurchaseInfo.Currency.EUR, com.visa.checkout.PurchaseInfo.Currency.PLN, com.visa.checkout.PurchaseInfo.Currency.INR, com.visa.checkout.PurchaseInfo.Currency.UAH, com.visa.checkout.PurchaseInfo.Currency.SAR, com.visa.checkout.PurchaseInfo.Currency.KWD, com.visa.checkout.PurchaseInfo.Currency.QAR}" />
+    </annotation>
+  </item>
+  <item name="com.visa.checkout.PurchaseInfo.PurchaseInfoBuilder PurchaseInfoBuilder(java.math.BigDecimal, java.lang.String) 1">
+    <annotation name="androidx.annotation.StringDef">
+      <val name="value" val="{com.visa.checkout.PurchaseInfo.Currency.USD, com.visa.checkout.PurchaseInfo.Currency.AUD, com.visa.checkout.PurchaseInfo.Currency.BRL, com.visa.checkout.PurchaseInfo.Currency.CAD, com.visa.checkout.PurchaseInfo.Currency.CNY, com.visa.checkout.PurchaseInfo.Currency.CLP, com.visa.checkout.PurchaseInfo.Currency.COP, com.visa.checkout.PurchaseInfo.Currency.HKD, com.visa.checkout.PurchaseInfo.Currency.MYR, com.visa.checkout.PurchaseInfo.Currency.MXN, com.visa.checkout.PurchaseInfo.Currency.NZD, com.visa.checkout.PurchaseInfo.Currency.PEN, com.visa.checkout.PurchaseInfo.Currency.SGD, com.visa.checkout.PurchaseInfo.Currency.ZAR, com.visa.checkout.PurchaseInfo.Currency.AED, com.visa.checkout.PurchaseInfo.Currency.ARS, com.visa.checkout.PurchaseInfo.Currency.GBP, com.visa.checkout.PurchaseInfo.Currency.EUR, com.visa.checkout.PurchaseInfo.Currency.PLN, com.visa.checkout.PurchaseInfo.Currency.INR, com.visa.checkout.PurchaseInfo.Currency.UAH, com.visa.checkout.PurchaseInfo.Currency.SAR, com.visa.checkout.PurchaseInfo.Currency.KWD, com.visa.checkout.PurchaseInfo.Currency.QAR}" />
+    </annotation>
+  </item>
+  <item name="com.visa.checkout.PurchaseInfo.PurchaseInfoBuilder com.visa.checkout.PurchaseInfo.PurchaseInfoBuilder setUserReviewAction(java.lang.String) 0">
+    <annotation name="androidx.annotation.StringDef">
+      <val name="value" val="{com.visa.checkout.PurchaseInfo.UserReviewAction.PAY, com.visa.checkout.PurchaseInfo.UserReviewAction.CONTINUE, com.visa.checkout.PurchaseInfo.UserReviewAction.ADD_CARD_TO_MERCHANT}" />
+    </annotation>
+  </item>
+  <item name="com.visa.checkout.PurchaseInfo.UserReviewAction">
+    <annotation name="androidx.annotation.StringDef">
+      <val name="value" val="{com.visa.checkout.PurchaseInfo.UserReviewAction.PAY, com.visa.checkout.PurchaseInfo.UserReviewAction.CONTINUE, com.visa.checkout.PurchaseInfo.UserReviewAction.ADD_CARD_TO_MERCHANT}" />
+    </annotation>
+  </item>
+  <item name="com.visa.checkout.VisaCheckoutSdk android.content.Intent getCheckoutIntent(android.app.Activity, java.math.BigDecimal, java.lang.String) 2">
+    <annotation name="androidx.annotation.StringDef">
+      <val name="value" val="{com.visa.checkout.PurchaseInfo.Currency.USD, com.visa.checkout.PurchaseInfo.Currency.AUD, com.visa.checkout.PurchaseInfo.Currency.BRL, com.visa.checkout.PurchaseInfo.Currency.CAD, com.visa.checkout.PurchaseInfo.Currency.CNY, com.visa.checkout.PurchaseInfo.Currency.CLP, com.visa.checkout.PurchaseInfo.Currency.COP, com.visa.checkout.PurchaseInfo.Currency.HKD, com.visa.checkout.PurchaseInfo.Currency.MYR, com.visa.checkout.PurchaseInfo.Currency.MXN, com.visa.checkout.PurchaseInfo.Currency.NZD, com.visa.checkout.PurchaseInfo.Currency.PEN, com.visa.checkout.PurchaseInfo.Currency.SGD, com.visa.checkout.PurchaseInfo.Currency.ZAR, com.visa.checkout.PurchaseInfo.Currency.AED, com.visa.checkout.PurchaseInfo.Currency.ARS, com.visa.checkout.PurchaseInfo.Currency.GBP, com.visa.checkout.PurchaseInfo.Currency.EUR, com.visa.checkout.PurchaseInfo.Currency.PLN, com.visa.checkout.PurchaseInfo.Currency.INR, com.visa.checkout.PurchaseInfo.Currency.UAH, com.visa.checkout.PurchaseInfo.Currency.SAR, com.visa.checkout.PurchaseInfo.Currency.KWD, com.visa.checkout.PurchaseInfo.Currency.QAR}" />
+    </annotation>
+  </item>
+  <item name="com.visa.checkout.VisaCheckoutSdk void init(android.content.Context, java.lang.String, java.lang.String, java.lang.String, com.visa.checkout.VisaCheckoutSdkInitListener) 1">
+    <annotation name="androidx.annotation.StringDef">
+      <val name="value" val="{com.visa.checkout.Environment.SANDBOX, com.visa.checkout.Environment.PRODUCTION}" />
+    </annotation>
+  </item>
+  <item name="com.visa.checkout.VisaCheckoutSdk.ResultCode">
+    <annotation name="androidx.annotation.IntDef">
+      <val name="value" val="{com.visa.checkout.VisaCheckoutSdk.ResultCode.RESULT_SDK_NOT_INITIALIZED, com.visa.checkout.VisaCheckoutSdk.ResultCode.RESULT_MISSING_PARAMETER, com.visa.checkout.VisaCheckoutSdk.ResultCode.RESULT_FAIL_TO_LAUNCH, com.visa.checkout.VisaCheckoutSdk.ResultCode.RESULT_INTERNAL_ERROR, com.visa.checkout.VisaCheckoutSdk.ResultCode.RESULT_INITIALIZED_FAILED, com.visa.checkout.VisaCheckoutSdk.ResultCode.RESULT_CLOSED_CALLED}" />
+    </annotation>
+  </item>
+  <item name="com.visa.checkout.VisaCheckoutSdk.Status">
+    <annotation name="androidx.annotation.IntDef">
+      <val name="value" val="{com.visa.checkout.VisaCheckoutSdk.Status.SUCCESS, com.visa.checkout.VisaCheckoutSdk.Status.INVALID_API_KEY, com.visa.checkout.VisaCheckoutSdk.Status.UNSUPPORTED_SDK_VERSION, com.visa.checkout.VisaCheckoutSdk.Status.FAIL_TO_INITIALIZE, com.visa.checkout.VisaCheckoutSdk.Status.MISSING_PARAMETER, com.visa.checkout.VisaCheckoutSdk.Status.OS_VERSION_NOT_SUPPORTED, com.visa.checkout.VisaCheckoutSdk.Status.INTERNAL_ERROR, com.visa.checkout.VisaCheckoutSdk.Status.SDK_PAUSED, com.visa.checkout.VisaCheckoutSdk.Status.SDK_RESUMED}" />
+    </annotation>
+  </item>
+</root>
+
