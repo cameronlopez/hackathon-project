@@ -48,8 +48,16 @@ dependencies {
     implementation 'com.google.firebase:firebase-firestore:21.4.3'
     implementation 'com.google.firebase:firebase-storage-ktx:19.1.1'
     implementation 'com.android.support:multidex:1.0.3'
+    implementation 'com.squareup.picasso:picasso:2.71828'
+    implementation project(path: ':visacheckout-android-sdk-6.6.2')
     testImplementation 'junit:junit:4.12'
     androidTestImplementation 'androidx.test.ext:junit:1.1.1'
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.2.0'
+    implementation 'com.android.support:appcompat-v7:26.1.0'
+//    implementation(name:'visacheckout-android-sdk-6.6.2',ext:'aar')
+//    implementation 'com.braintreepayments.api:visa-checkout:3.0.0'
+
+
+
 
 }

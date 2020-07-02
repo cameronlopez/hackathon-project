@@ -1,9 +1,10 @@
 package com.example.visahackathon
 
-class User(val email: String = "",
+class User(val uuid: String = "",
+           val email: String = "",
            val password: String = "",
-           val fullName: String = "",
-           val cardNum: String = "",
-           val expDate: String = "",
-           val cVV: String = "",
-           val zipCode: String = "")
+           val name: String = "",
+           val zipCode: Int = 0,
+           val profileImageUrl: String = "",
+           var amountDonated: Double = 0.0,
+           val donateGoal: Double = 0.0)

@@ -1,2 +1,3 @@
+include ':visacheckout-android-sdk-6.6.2'
 include ':app'
 rootProject.name = "VisaHackathon"

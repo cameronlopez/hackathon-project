@@ -90,5 +90,12 @@
         <action
             android:id="@+id/action_Donate_to_Profile"
             app:destination="@id/Profile" />
+        <action
+            android:id="@+id/action_Donate_to_visaCheckoutButton"
+            app:destination="@id/visaCheckoutButton" />
     </fragment>
+    <fragment
+        android:id="@+id/visaCheckoutButton"
+        android:name="com.example.visahackathon.VisaCheckoutButton"
+        android:label="VisaCheckoutButton" />
 </navigation>
