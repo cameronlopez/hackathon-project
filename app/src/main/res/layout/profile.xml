@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
@@ -7,7 +7,7 @@
 
     <View
         android:id="@+id/view3"
-        android:layout_width="0dp"
+        android:layout_width="match_parent"
         android:layout_height="50dp"
         android:background="#192061"
         app:layout_constraintEnd_toEndOf="parent"
@@ -30,20 +30,141 @@
         android:layout_marginStart="120dp"
         android:layout_marginLeft="120dp"
         android:layout_marginTop="8dp"
+        android:layout_centerHorizontal="true"
         android:text="@string/profile_label"
         android:textColor="@android:color/white"
         android:textSize="24sp"
         app:layout_constraintStart_toEndOf="@+id/profile_to_home"
         app:layout_constraintTop_toTopOf="parent" />
 
-    <Button
-        android:id="@+id/profile_to_donate"
+    <RelativeLayout
+        android:id="@+id/profile_info"
+        android:layout_height="match_parent"
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/donate_label"
-        app:layout_constraintBottom_toBottomOf="parent"
+        android:layout_below="@id/view3"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintTop_toBottomOf="@+id/view3">
+
+        <TextView
+            android:id="@+id/impactText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:text="25% Impact"
+            android:textSize="28dp"
+            android:paddingTop="30dp"
+            android:paddingBottom="30dp"/>
+
+        <LinearLayout
+            android:id="@+id/profile_attributes"
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center_vertical"
+            android:layout_below="@id/impactText">
+
+            <RelativeLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:padding="8dp">
+
+                <TextView
+                    android:id="@+id/donate_label"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Total Donated"
+                    android:textSize="20sp"
+                    android:textStyle="bold"/>
+                <TextView
+                    android:id="@+id/donate_amount"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/donate_label"
+                    android:layout_centerHorizontal="true"
+                    android:text="5"
+                    android:textSize="18sp"/>
+
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:padding="8dp">
+
+                <TextView
+                    android:id="@+id/leaderboard_label"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Leaderboard"
+                    android:textSize="20sp"
+                    android:textStyle="bold"/>
+                <TextView
+                    android:id="@+id/position"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/leaderboard_label"
+                    android:layout_centerHorizontal="true"
+                    android:text="1000"
+                    android:textSize="18sp"/>
+
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:padding="8dp">
+
+                <TextView
+                    android:id="@+id/community_label"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Community Donated"
+                    android:textAlignment="center"
+                    android:gravity="center_horizontal"
+                    android:textSize="20sp"
+                    android:textStyle="bold"/>
+                <TextView
+                    android:id="@+id/community_amount"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/community_label"
+                    android:layout_centerHorizontal="true"
+                    android:text="5"
+                    android:textSize="18sp"/>
+
+            </RelativeLayout>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:layout_below="@id/profile_attributes">
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Donation Log"
+                android:textSize="20dp"
+                android:textStyle="bold"
+                android:paddingBottom="2dp"
+                android:layout_marginLeft="4dp"/>
+            <ListView
+                android:id="@+id/donationLog"
+                android:layout_width="match_parent"
+                android:layout_height="0dip"
+                android:layout_weight="1"
+                tools:listitem="@layout/donation_item"/>
+
+            <Button
+                android:id="@+id/donation_button"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Donate"
+                android:layout_below="@id/donationLog"/>
+        </LinearLayout>
+    </RelativeLayout>
+</RelativeLayout>
 
     <TextView
         android:id="@+id/prevDonations"
