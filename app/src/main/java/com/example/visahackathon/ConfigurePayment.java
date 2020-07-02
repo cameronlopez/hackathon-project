@@ -28,7 +28,6 @@ public class ConfigurePayment {
         HashMap<String, String> data = new HashMap<>();
         data.put("key", "value");
         data.put("key1", "value1");
-//        new BigDecimal("10.23")
         Double transactionAmount = Double.parseDouble(amount);
         return new PurchaseInfo.PurchaseInfoBuilder(new BigDecimal(transactionAmount),
                 PurchaseInfo.Currency.USD).setShippingHandling(new BigDecimal("0"))

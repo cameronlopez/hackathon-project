@@ -40,7 +40,6 @@ class Donate : Fragment() {
         radioGroup.setOnCheckedChangeListener(object : RadioGroup.OnCheckedChangeListener {
             override fun onCheckedChanged(group: RadioGroup?, checkedId: Int) {
                 place = view.findViewById<RadioButton>(checkedId).text.toString()
-//                place = checkedId.toString()
             }
         })
 
