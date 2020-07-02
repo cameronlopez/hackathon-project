@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="button_color">#003EA9</color>
+    <color name="hint_color">#42000000</color>
+    <color name="success_color">#009688</color>
+    <color name="transparent">#00000000</color>
+    <color name="warning_color">#f4511e</color>
+    <declare-styleable name="VisaCheckoutButton"><attr format="integer" name="buttonHeight"/><attr format="string" name="buttonWidth"/><attr format="string" name="buttonColor"/><attr format="boolean" name="animation"/></declare-styleable>
+    <string name="vco_btn_color_neutral">NEUTRAL</string>
+    <string name="vco_btn_color_standard">STANDARD</string>
+    <string name="vco_fingerprint_cancel">Cancel</string>
+    <string name="vco_fingerprint_description">Confirm fingerprint to continue</string>
+    <string name="vco_fingerprint_description_fingerprint_icon">Fingerprint icon</string>
+    <string name="vco_fingerprint_hint">Touch sensor</string>
+    <string name="vco_fingerprint_new_fingerprint_enrolled_description">A new fingerprint was added to this device, so your password is required.</string>
+    <string name="vco_fingerprint_not_recognized">Fingerprint not recognized. Try again</string>
+    <string name="vco_fingerprint_password">Password</string>
+    <string name="vco_fingerprint_password_description">Enter your store password to continue</string>
+    <string name="vco_fingerprint_sign_in">Sign in</string>
+    <string name="vco_fingerprint_success">Fingerprint recognized</string>
+    <string name="vco_fingerprint_use_fingerprint_in_future">Use fingerprint in the future</string>
+    <string name="vco_fingerprint_use_password">Use password</string>
+</resources>

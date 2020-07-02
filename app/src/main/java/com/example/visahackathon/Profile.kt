@@ -58,7 +58,10 @@ class Profile : Fragment() {
     fun getImpact() {
         val totalDonated = globalUser.amountDonated
         val donateGoal = globalUser.donateGoal
-        val percent = (totalDonated / donateGoal) * 100
+        var percent : Double = 0.0
+        if(donateGoal != 0.0) {
+            percent = (totalDonated / donateGoal) * 100
+        }
 
         impactText.text = "${percent.toInt().toString()}% Impact"
     }
