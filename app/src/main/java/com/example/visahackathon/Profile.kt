@@ -52,6 +52,14 @@ class Profile : Fragment() {
 //        })
 //    }
 
+    fun getImpact() {
+        val totalDonated = globalUser.amountDonated
+        val donateGoal = globalUser.donateGoal
+        val percent = (totalDonated / donateGoal) * 100
+
+        impactText.text = "${percent.toInt().toString()}% Impact"
+    }
+
     fun getLeaderboardPositionAndTotalDonated(users : MutableMap<String, String>, currentEmail : String) {
         var position1 : Int = 0
         for(user in users) {
@@ -112,6 +120,26 @@ class Profile : Fragment() {
         })
     }
 
+    fun getCommunityDonated() {
+
+        fAuth = FirebaseAuth.getInstance()
+        fDatabase = FirebaseDatabase.getInstance()
+
+        fDatabase.reference.child("/Community").child("/zipCode").addValueEventListener(object : ValueEventListener {
+            override fun onDataChange(snapshot: DataSnapshot) {
+                snapshot.children.forEach {
+                    if(it.key.toString() == globalUser.zipCode.toString()) {
+                        community_amount.text = it.child("communityGoal").value.toString()
+                    }
+                }
+            }
+
+            override fun onCancelled(error: DatabaseError) {
+
+            }
+        })
+    }
+
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
@@ -131,9 +159,13 @@ class Profile : Fragment() {
 
         listView = donationLog
 
+        getImpact()
+
         getUsersForPosition {
             getLeaderboardPositionAndTotalDonated(it, userEmail)
         }
+
+        getCommunityDonated()
 
         getDonationLog(userEmail) {
             adapter = this.context?.let { it1 -> DonationLogAdapter(it1, ArrayList(it.reversed())) }

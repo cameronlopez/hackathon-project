@@ -104,7 +104,7 @@
                     android:layout_height="wrap_content"
                     android:layout_below="@id/leaderboard_label"
                     android:layout_centerHorizontal="true"
-                    android:text="5"
+                    android:text="1000"
                     android:textSize="18sp"/>
 
             </RelativeLayout>
