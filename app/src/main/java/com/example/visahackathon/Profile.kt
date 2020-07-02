@@ -33,27 +33,8 @@ class Profile : Fragment() {
     lateinit var donateAmount : TextView
     var adapter : DonationLogAdapter? = null
     var donationLogList = ArrayList<DonationLogEntry>()
-    var userMap = mutableMapOf<String, String>()
+    var usersList = ArrayList<String>()
 
-
-//    fun getTotalDonated(email : String) {
-//        fAuth = FirebaseAuth.getInstance()
-//        fDatabase = FirebaseDatabase.getInstance()
-//
-//        fDatabase.reference.child("/Users").addValueEventListener(object : ValueEventListener {
-//            override fun onDataChange(snapshot: DataSnapshot) {
-//                snapshot.children.forEach {
-//                    if(snapshot.children.toString().contains("email=$email")) {
-//                        donate_amount.text = snapshot.child("email").value.toString()
-//                    }
-//                }
-//            }
-//
-//            override fun onCancelled(error: DatabaseError) {
-//                Log.d("Error: ", error.toString())
-//            }
-//        })
-//    }
 
     fun getImpact() {
         val totalDonated = globalUser.amountDonated
@@ -66,20 +47,44 @@ class Profile : Fragment() {
         impactText.text = "${percent.toInt().toString()}% Impact"
     }
 
-    fun getLeaderboardPositionAndTotalDonated(users : MutableMap<String, String>, currentEmail : String) {
+    fun getTotalDonated(email : String) {
+        fAuth = FirebaseAuth.getInstance()
+        fDatabase = FirebaseDatabase.getInstance()
+
+        val orderedUsers = fDatabase.reference.child("/Users").orderByChild("amountDonated")
+
+        orderedUsers.addValueEventListener(object : ValueEventListener {
+            override fun onDataChange(snapshot: DataSnapshot) {
+                snapshot.children.forEach {
+                    if(it.child("email").value.toString() == email) {
+                        donate_amount.text = "$${it.child("amountDonated").value}0"
+
+                        if(!it.child("amountDonated").value.toString().contains(".")) {
+                            donate_amount.text = "$${it.child("amountDonated").value}.00"
+                        }
+                    }
+                }
+            }
+
+            override fun onCancelled(error: DatabaseError) {
+                Log.d("Error: ", error.toString())
+            }
+        })
+    }
+
+    fun getLeaderboardPosition(users : List<String>, currentEmail : String) {
         var position1 : Int = 0
         for(user in users) {
-            if(user.key == currentEmail) {
+            if(user == currentEmail) {
                 position1++
                 leaderboardPosition.text = position1.toString()
-                donateAmount.text = user.value
                 return
             }
             position1++
         }
     }
 
-    fun getUsersForPosition(callback : (MutableMap<String, String>) -> Unit) {
+    fun getUsersForPosition(callback : (List<String>) -> Unit) {
 
         fAuth = FirebaseAuth.getInstance()
         fDatabase = FirebaseDatabase.getInstance()
@@ -90,10 +95,9 @@ class Profile : Fragment() {
             override fun onDataChange(snapshot: DataSnapshot) {
                 for(postSnapshot in snapshot.children) {
                     val userEmail = postSnapshot.child("email").value.toString()
-                    val userDonated = postSnapshot.child("amountDonated").value.toString()
-                    userMap.put(userEmail, userDonated)
+                    usersList.add(userEmail)
                 }
-                callback(userMap)
+                callback(usersList)
             }
 
             override fun onCancelled(error: DatabaseError) {
@@ -102,7 +106,7 @@ class Profile : Fragment() {
         })
     }
 
-    fun getDonationLog(email : String, callback : (List<DonationLogEntry>) -> Unit) {
+    fun getDonationLog(callback : (List<DonationLogEntry>) -> Unit) {
         fAuth = FirebaseAuth.getInstance()
         fDatabase = FirebaseDatabase.getInstance()
 
@@ -133,7 +137,12 @@ class Profile : Fragment() {
             override fun onDataChange(snapshot: DataSnapshot) {
                 snapshot.children.forEach {
                     if(it.key.toString() == globalUser.zipCode.toString()) {
-                        community_amount.text = it.child("communityGoal").value.toString()
+                        if(it.child("communityDonated").value.toString().contains(".")) {
+                            community_amount.text = "$${it.child("communityDonated").value}0"
+                        }
+                        else {
+                            community_amount.text = "$${it.child("communityDonated").value}.00"
+                        }
                     }
                 }
             }
@@ -168,13 +177,15 @@ class Profile : Fragment() {
 
         getImpact()
 
+        getTotalDonated(userEmail)
+
         getUsersForPosition {
-            getLeaderboardPositionAndTotalDonated(it, userEmail)
+            getLeaderboardPosition(it.reversed(), userEmail)
         }
 
         getCommunityDonated()
 
-        getDonationLog(userEmail) {
+        getDonationLog{
             adapter = this.context?.let { it1 -> DonationLogAdapter(it1, ArrayList(it.reversed())) }
             listView.adapter = adapter
         }
