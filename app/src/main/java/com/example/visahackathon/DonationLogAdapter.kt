@@ -30,7 +30,7 @@ class DonationLogAdapter(private val context: Context,
 
         val donationEntry = getItem(position) as DonationLogEntry
 
-        businessName.text = "Donated ${donationEntry.amount} to ${donationEntry.entry}"
+        businessName.text = "Donated $${donationEntry.amount} to ${donationEntry.entry}"
 
         return rowView
     }

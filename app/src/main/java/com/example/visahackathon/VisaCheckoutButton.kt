@@ -19,6 +19,7 @@ import com.google.protobuf.WireFormat
 import com.visa.checkout.*
 import com.visa.checkout.ManualCheckoutSession.ManualCheckoutLaunchHandler
 import com.visa.checkout.Profile
+import java.util.*
 
 
 /**
@@ -75,7 +76,6 @@ class VisaCheckoutButton : Fragment() {
                 ) {
                     Log.d(ContentValues.TAG, "Success")
                     var uTable: DatabaseReference = fDatabase.reference.child("/Users/${globalUser.uuid}/amountDonated")
-                    var dTable: DatabaseReference = fDatabase.reference.child("/Donations/${globalUser.uuid}")
 
                     uTable.addListenerForSingleValueEvent(object: ValueEventListener {
                         override fun onDataChange(snapshot: DataSnapshot) {
@@ -89,9 +89,9 @@ class VisaCheckoutButton : Fragment() {
                         }
                     })
 
-                    fDatabase.reference.child("/Donations/${globalUser.uuid}").setValue(
-                        arrayListOf(globalDonation.place, globalDonation.amount)
-                    )
+                    val randID = UUID.randomUUID()
+
+                    fDatabase.reference.child("/Donations/${globalUser.uuid}/${randID}").setValue(globalDonation)
 
                     var msg = ""
                     if (globalUser.amountDonated + globalDonation.amount?.toDouble()!! >= globalUser.donateGoal){

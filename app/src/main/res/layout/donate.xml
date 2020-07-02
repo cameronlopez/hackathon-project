@@ -88,7 +88,7 @@
         android:ems="10"
         android:gravity="center"
         android:hint='Ex. "Great Work"'
-        android:digits="abcdefghijklmnopqrstuvwxyz1234567890 "
+        android:digits="abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ1234567890 "
         android:inputType="textPersonName"
         android:textColor="#0B0A0A"
         android:textSize="24sp"

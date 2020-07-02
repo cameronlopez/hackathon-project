@@ -106,16 +106,14 @@ class Profile : Fragment() {
         fAuth = FirebaseAuth.getInstance()
         fDatabase = FirebaseDatabase.getInstance()
 
-        fDatabase.reference.child("Donate").addValueEventListener(object : ValueEventListener {
+        fDatabase.reference.child("Donations/${globalUser.uuid}").addValueEventListener(object : ValueEventListener {
             override fun onDataChange(snapshot: DataSnapshot) {
                 snapshot.children.forEach {
-                    if(it.toString().contains("Email=$email")) {
 
-                        val entry = it.child("Place").value.toString()
-                        val amount = it.child("Amount").value.toString()
+                    val entry = it.child("place").value.toString()
+                    val amount = it.child("amount").value.toString()
 
-                        donationLogList.add(DonationLogEntry(entry, amount.toInt()))
-                    }
+                    donationLogList.add(DonationLogEntry(entry, amount.toDouble()))
                 }
                 callback(donationLogList)
             }
