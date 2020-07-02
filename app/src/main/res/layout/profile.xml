@@ -99,12 +99,11 @@
                     android:textSize="20sp"
                     android:textStyle="bold"/>
                 <TextView
-                    android:id="@+id/position"
+                    android:id="@+id/leaderboard_position"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_below="@id/leaderboard_label"
                     android:layout_centerHorizontal="true"
-                    android:text="1000"
                     android:textSize="18sp"/>
 
             </RelativeLayout>
@@ -166,15 +165,3 @@
     </RelativeLayout>
 </RelativeLayout>
 
-    <TextView
-        android:id="@+id/prevDonations"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="48dp"
-        android:text="Populate"
-        android:textColor="#090909"
-        android:textColorHint="#090909"
-        app:layout_constraintTop_toBottomOf="@+id/profile_text_view"
-        tools:layout_editor_absoluteX="156dp" />
-
-</androidx.constraintlayout.widget.ConstraintLayout>

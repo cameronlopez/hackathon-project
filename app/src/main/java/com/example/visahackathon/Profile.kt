@@ -29,6 +29,8 @@ class Profile : Fragment() {
     lateinit var fAuth : FirebaseAuth
     lateinit var fDatabase : FirebaseDatabase
     lateinit var listView : ListView
+    lateinit var leaderboardPosition : TextView
+    lateinit var donateAmount : TextView
     var adapter : DonationLogAdapter? = null
     var donationLogList = ArrayList<DonationLogEntry>()
     var userMap = mutableMapOf<String, String>()
@@ -66,8 +68,8 @@ class Profile : Fragment() {
         for(user in users) {
             if(user.key == currentEmail) {
                 position1++
-                position.text = (position1++).toString()
-                donate_amount.text = user.value
+                leaderboardPosition.text = position1.toString()
+                donateAmount.text = user.value
                 return
             }
             position1++
@@ -151,6 +153,9 @@ class Profile : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+
+        leaderboardPosition = view.findViewById(R.id.leaderboard_position)
+        donateAmount = view.findViewById(R.id.donate_amount)
 
         profile_text_view.text = globalUser.name
 
