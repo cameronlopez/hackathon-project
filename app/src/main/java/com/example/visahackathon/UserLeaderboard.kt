@@ -37,108 +37,12 @@ class UserLeaderboard : Fragment() {
     fun searchList() {
         filteredUserList.clear()
         baseUserList.forEach {
-            if (it.name.contains(search_bar.text.toString())) {
+            if (it.name.toLowerCase().contains(search_bar.text.toString().toLowerCase())) {
                 filteredUserList.add(it)
             }
         }
         adapter!!.updateList(filteredUserList)
     }
-
-
-//    fun getNames(myCallback: (List<String>) -> Unit) {
-//        fAuth = FirebaseAuth.getInstance()
-//        fDatabase = FirebaseDatabase.getInstance()
-//        val names = fDatabase.reference.child("/users")
-//
-//        names.addValueEventListener(object : ValueEventListener {
-//            override fun onDataChange(snapshot: DataSnapshot) {
-//                for(postSnapshot in snapshot.children) {
-//                    val userName = postSnapshot.child("fullName").value.toString()
-//                    userNames.add(userName)
-//                }
-//                myCallback(userNames)
-//            }
-//
-//            override fun onCancelled(error: DatabaseError) {
-//
-//            }
-//        })
-//    }
-//
-//    fun getEmails(myCallback : (List<String>) -> Unit) {
-//        fAuth = FirebaseAuth.getInstance()
-//        fDatabase = FirebaseDatabase.getInstance()
-//        val emails = fDatabase.reference.child("/users")
-//
-//        emails.addValueEventListener(object : ValueEventListener {
-//            override fun onDataChange(snapshot: DataSnapshot) {
-//                for(postSnapshot in snapshot.children) {
-//                    val userEmail = postSnapshot.child("email").value.toString()
-//                    userEmails.add(userEmail)
-//                }
-//                myCallback(userEmails)
-//            }
-//
-//            override fun onCancelled(error: DatabaseError) {
-//
-//            }
-//        })
-//
-//    }
-
-//    fun getDonations(myCallback: (List<Int>) -> Unit) {
-//
-//        fAuth = FirebaseAuth.getInstance()
-//        fDatabase = FirebaseDatabase.getInstance()
-//        val donations = fDatabase.reference.child("/Donate")
-//
-//        for(email in userEmails) {
-//            donations.addValueEventListener(object : ValueEventListener {
-//                var donationAmount = 0
-//                override fun onDataChange(snapshot: DataSnapshot) {
-//                    for(postSnapshot in snapshot.children) {
-//                        if(postSnapshot.child("Email").value.toString() == email) {
-//                            val amount : Int = postSnapshot.child("Amount").value.toString().toInt()
-//                            donationAmount += amount
-//                        }
-//                    }
-//
-//                    userDonations.add(donationAmount)
-//                }
-//
-//                override fun onCancelled(error: DatabaseError) {
-//
-//                }
-//            })
-//        }
-//
-//    }
-
-//    fun getCard(myCallback: (List<UserLeaderboardEntry>) -> Unit) {
-//        fAuth = FirebaseAuth.getInstance()
-//        fDatabase = FirebaseDatabase.getInstance()
-//        val donations = fDatabase.reference.child("/Donate")
-//
-//        for(emails in userEmails) {
-//            donations.addValueEventListener(object : ValueEventListener {
-//                override fun onDataChange(snapshot: DataSnapshot) {
-//                    for (postSnapshot in snapshot.children) { // iterates through IDs in Users
-//                        val userName = postSnapshot.child("fullName").value.toString()
-//
-//
-//                        var userBusiness = postSnapshot.child("Email").value.toString()
-//
-//                        baseUserList.add(UserLeaderboardEntry(userName, userAmount, userBusiness))
-//                    }
-//                    myCallback(baseUserList)
-//                }
-//
-//                override fun onCancelled(error: DatabaseError) {
-//
-//                }
-//            })
-//        }
-//    }
 
     fun populateCards(callback : (List<UserLeaderboardEntry>) -> Unit) {
 

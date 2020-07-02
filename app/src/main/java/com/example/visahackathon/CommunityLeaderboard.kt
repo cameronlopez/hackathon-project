@@ -37,7 +37,7 @@ class CommunityLeaderboard : Fragment() {
     fun searchList() {
         filteredCommunityList.clear()
         baseCommunityList.forEach {
-            if (it.cityName.contains(search_bar.text.toString())) {
+            if (it.cityName.toLowerCase().contains(search_bar.text.toString().toLowerCase())) {
                 filteredCommunityList.add(it)
             }
         }

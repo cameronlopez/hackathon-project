@@ -87,7 +87,12 @@ class Home : Fragment() {
                             full_name_text_view.text = globalUser.name
                             progressBar.max = globalUser.donateGoal.toInt()
                             progressBar.progress = globalUser.amountDonated.toInt()
-                            donation_amount.text = "$${globalUser.amountDonated} Donated"
+
+                            donation_amount.text = "$${globalUser.amountDonated}0 Donated"
+
+                            if(!globalUser.amountDonated.toString().contains(".")) {
+                                donation_amount.text = "$${globalUser.amountDonated}.00 Donated"
+                            }
 
                             if (globalUser.profileImageUrl != "") {
                                 Picasso.get().load(globalUser.profileImageUrl)

@@ -39,7 +39,14 @@ class UserAdapter(private val context: Context,
         val userEntry = getItem(position) as UserLeaderboardEntry
 
         userName.text = userEntry.name
-        userAmount.text = "$" + userEntry.amount + " raised"
+
+        if(userEntry.amount.toString().contains(".")) {
+            userAmount.text = "$${userEntry.amount}0 raised"
+        }
+        else {
+            userAmount.text = "$${userEntry.amount}.00 raised"
+        }
+
         userBusiness.text = "Located in " + userEntry.zipCode
 
         return rowView
